@@ -26,4 +26,14 @@ public class HiApi {
     public String hiUname(@PathVariable String uname) {
         return "hi, " + uname;
     }
+
+    @GetMapping(value = "/hello")
+    public String Hello() {
+        return "hello";
+    }
+
+    @GetMapping(value = "/hai")
+    public String Hi() {
+        return "hai";
+    }
 }

@@ -1,0 +1,14 @@
+msapmp:
+  http:
+    log:
+      request:
+        body:
+          ignore-uris: /hi/*,/hello
+      response:
+        body:
+          ignore-uris: /hi/*,/hai
+
+spring:
+  mvc:
+    favicon:
+      enabled: false
