@@ -1,12 +1,7 @@
 msapmp:
   http:
     log:
-      request:
-        body:
-          ignore-uris: /hi/*,/hello
-      response:
-        body:
-          ignore-uris: /hi/*,/hai
+      filter-uris: /hi/*
 
 spring:
   mvc:
