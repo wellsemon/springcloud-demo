@@ -3,11 +3,8 @@ package com.semon.spring.cloud.service.consumer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
-/**
- * Created by suzw1 on 2018/09/21.
- */
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients

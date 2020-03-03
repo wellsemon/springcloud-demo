@@ -7,9 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Created by suzw1 on 2018/09/21.
- */
 @RestController
 public class HiApi {
     private static final Logger LOG = LoggerFactory.getLogger(HiApi.class.getName());
