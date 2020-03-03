@@ -1,16 +1,12 @@
 server:
-  port: 9201
+  port: 9301
 spring:
-  mvc:
-    favicon:
-      enabled: false
   application:
-    name: eureka-client-a
+    name: service-consumer
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:9191/eureka/,http://localhost:9192/eureka/
-msapmp:
-  http:
-    log:
-      filter-uris: /hi/*
+ribbon:
+  connectTimeout: 30000
+  readTimeout: 120000

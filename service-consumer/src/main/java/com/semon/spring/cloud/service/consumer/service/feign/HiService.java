@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Component
-@FeignClient("eureka-client")
+@FeignClient("eureka-client-a")
 public interface HiService {
     @GetMapping(value = "/hi/{uname}")
     String hiUname(@PathVariable("uname") String uname);
