@@ -1,6 +1,46 @@
 # springcloud-sample
 spring cloud sample
 
+# features
+## sidecar
+register function components with eureka servers without any modification, espectially heterogeneous components or
+ technologies those are based on java platfomat
+### instances
+* eureka-client-c registered with eureka-server-c
+* eureka-client-c-sidecar registered with eureka-server-a and eureka-server-b
+* service-consumer registered with eureka-server-a and eureka-server-b
+
+### enable sidecar
+* create sidecar project: eureka-client-sidecar-c
+* eureka-client-c-sidecar -- pom
+```
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-netflix-sidecar</artifactId>
+</dependency>
+```
+* eureka-client-c-sidecar -- application.yml  
+```
+sidecar:
+  port: 9203
+  health-uri: http://localhost:9203/health
+```
+* access
+```  
+http://${eureka-client-c-sidecar-host}:${c-sidecar-port}
+```
+* service-consumer  
+invokes apis of eureka-client-c by feign
+* eureka-client-c
+invoke other services registered with eureka servers:  
+```
+http://${eureka-client-c-sidecar-host}:${c-sidecar-port}/${service-id}/${service-uri}
+```
+
 # QA
 ## services only register with one eureka server: a or b
 ### reason  
