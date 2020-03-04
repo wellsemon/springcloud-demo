@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Component
 @FeignClient("eureka-client-a")
-public interface HiService {
+public interface ClientAFeign {
     @GetMapping(value = "/hi/{uname}")
     String hiUname(@PathVariable("uname") String uname);
 

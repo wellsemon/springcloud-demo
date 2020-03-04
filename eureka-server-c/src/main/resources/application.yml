@@ -1,0 +1,12 @@
+server:
+  port: 9193
+spring:
+  application:
+    name: eureka-server-c
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:9193/eureka/
+    fetch-registry: false
+  instance:
+    hostname: serverc

@@ -15,6 +15,9 @@
         <module>eureka-client-a</module>
         <module>eureka-client-b</module>
         <module>service-consumer</module>
+        <module>eureka-server-c</module>
+        <module>eureka-client-c</module>
+        <module>eureka-client-c-sidecar</module>
     </modules>
 
     <parent>
