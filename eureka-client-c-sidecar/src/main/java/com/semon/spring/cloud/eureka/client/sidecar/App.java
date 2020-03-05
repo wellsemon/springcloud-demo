@@ -1,4 +1,4 @@
-package com.semon.spring.cloud.eureka.client;
+package com.semon.spring.cloud.eureka.client.sidecar;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
