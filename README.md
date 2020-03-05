@@ -2,7 +2,7 @@
 spring cloud sample
 
 # features
-## sidecar
+## eureka-client-c-sidecar
 register function components with eureka servers without any modification, espectially heterogeneous components or
  technologies those are based on java platfomat
 ### instances
@@ -39,6 +39,45 @@ invokes apis of eureka-client-c by feign
 invoke other services registered with eureka servers:  
 ```
 http://${eureka-client-c-sidecar-host}:${c-sidecar-port}/${service-id}/${service-uri}
+```
+## zuul-gateway
+### pom.xml
+```
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+</dependency>
+```
+### App.java
+```
+@EnableZuulProxy
+@SpringBootApplication
+public class App {
+    public static void main(String[] args) {
+        SpringApplication.run(App.class, args);
+    }
+}
+```
+### application.yml
+```
+server:
+  port: 9999
+
+spring:
+  application:
+    name: zuul-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9191/eureka/,http://localhost:9192/eureka/
+```
+### invoke
+```
+http://${zuul-gateway-host}:${zuul-gateway-port}/${other-service-name}/${other-service-uri}
 ```
 
 # QA
