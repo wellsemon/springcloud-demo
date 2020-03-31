@@ -13,4 +13,4 @@ eureka:
 msapmp:
   http:
     log:
-      filter-uris: /hi/*
+      filter-uris: /h*,/h*/*
