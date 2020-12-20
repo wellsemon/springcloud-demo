@@ -24,9 +24,9 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.msapmp.starter</groupId>
+            <groupId>com.github.MSAPMP</groupId>
             <artifactId>http-log-spring-boot-starter</artifactId>
-            <version>0.0.1</version>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 </project>
